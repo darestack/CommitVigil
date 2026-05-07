@@ -1,4 +1,4 @@
-# CommitVigil: The Autonomous Accountability Platform 🛡️
+# CommitVigil: Real-time monitoring and alerting for GitHub commit activity. Track sensitive changes, secrets exposure, or team velocity with automated notifications.
 
 ![CommitVigil Hero](docs/assets/hero.jpg)
 
