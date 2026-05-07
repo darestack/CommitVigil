@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "commitvigil"
 version = "0.1.0"
-description = "CommitVigil is a standalone, AI-powered service designed to enforce human commitments and behavioral accountability."
+description = "FastAPI lab for extracting commitments from chat and Git commit text."
 license = "MIT"
 authors = ["daretechie <deeprince2020@gmail.com>"]
 readme = "README.md"
@@ -86,4 +86,3 @@ exclude = ["migrations/", "tests/"]
 [tool.bandit]
 exclude_dirs = ["tests", "migrations"]
 tests = ["B201", "B301"]
-

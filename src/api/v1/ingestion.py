@@ -22,18 +22,18 @@ class GitCommitInbound(BaseModel):
 )
 async def ingest_raw_commitment(user_id: str, raw_text: str):
     """
-    Elite Feature: Extract structured commitment record from raw Slack/Discord text.
+    Extract a structured commitment record from raw chat text.
     """
     extractor = CommitmentExtractor()
 
     extracted = await extractor.parse_conversation(raw_text)
 
-    # Hash identity for Privacy-Preserving Logging
+    # Hash identity before logging.
     identity_hash = (
         hashlib.sha256(extracted.who.encode()).hexdigest()[:12] if extracted.who else "none"
     )
 
-    # Audit: In a full production system, we would persist this to a 'tasks' table.
+    # In a full workflow, this would be persisted to a tasks table.
     logger.info(
         "commitment_extracted",
         user_id=user_id,
@@ -55,7 +55,7 @@ async def ingest_raw_commitment(user_id: str, raw_text: str):
 )
 async def ingest_git_commitment(commit_data: GitCommitInbound):
     """
-    Advanced GitOps Feature: Extract commitments directly from Git Commit Messages.
+    Extract commitments from Git commit messages.
     """
     extractor = CommitmentExtractor()
     author_email = commit_data.author_email

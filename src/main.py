@@ -52,7 +52,7 @@ setup_logging()
 @asynccontextmanager
 async def lifespan(fastapi_app: FastAPI):  # noqa: ARG001
     """
-    Modern lifespan management for Enterprise FastAPI apps.
+    Lifespan management for the FastAPI app.
     Handles startup and shutdown logic.
     """
     logger.info("application_startup", status="initializing_resources")
